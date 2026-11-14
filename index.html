@@ -354,6 +354,228 @@ textarea:focus{outline:none;border-color:var(--accent)}
 @media (max-width:520px){.extra{grid-template-columns:1fr}}
 .extra.solo{grid-template-columns:1fr}
 .icta{margin-top:26px;display:flex;justify-content:center}
+/* ---------- animaties ---------- */
+figure.anim{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.ahead{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.ahead b{font-family:var(--f-display)}
+.atag{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:color-mix(in srgb, var(--accent) 12%, transparent);border-radius:999px;padding:3px 10px}
+.astage{padding:16px;min-height:120px}
+figure.anim figcaption{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 16px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem;background:var(--sunk)}
+figure.anim figcaption span{flex:1 1 220px}
+.aknop{padding:8px 14px;font-size:.9rem}
+/* prompt */
+.ap{display:grid;gap:12px}
+.ap-bub{border-radius:14px;padding:10px 14px;display:grid;gap:2px;transition:opacity .5s ease, background .5s ease, filter .5s ease;max-width:94%}
+.ap-bub.me{background:color-mix(in srgb, var(--accent) 14%, var(--surface));justify-self:end}
+.ap-bub.ai{background:var(--sunk);justify-self:start}
+.ap-who{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.ap-txt{line-height:1.45}
+.ap-txt mark{background:color-mix(in srgb, var(--accent) 28%, transparent);color:inherit;border-radius:4px;padding:0 3px}
+@media (prefers-reduced-motion: no-preference){ .ap-txt mark{animation:apin .6s ease} }
+@keyframes apin{from{background:var(--accent);color:var(--accent-ink)}}
+.ap-bub.vaag .ap-txt{color:var(--muted);font-style:italic}
+.ap-bub.denk{filter:blur(.6px)}
+.ap-bub.goed{background:color-mix(in srgb, var(--ok) 14%, var(--surface));outline:2px solid color-mix(in srgb, var(--ok) 45%, transparent)}
+.ap-meter{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:center;font-size:.85rem}
+.ap-mk{color:var(--muted);font-weight:700}
+.ap-bar{height:10px;border-radius:999px;background:var(--sunk);overflow:hidden}
+.ap-bar i{display:block;height:100%;background:var(--accent);border-radius:999px;transition:width .8s ease, background .5s ease}
+.ap-bar i.vol{background:var(--ok)}
+.ap-lab{grid-column:2;color:var(--muted)}
+@media (max-width:520px){ .ap-meter{grid-template-columns:1fr} .ap-lab{grid-column:1} }
+/* kraak */
+.ak{display:grid;gap:12px}
+.ak-term{background:#0F1720;color:#B9F6CA;font-family:var(--f-mono);font-size:.9rem;border-radius:12px;padding:10px 14px 12px;display:grid;gap:4px;overflow:hidden}
+.ak-top{display:flex;align-items:center;gap:6px;color:#7E8C9A;font-size:.78rem;margin-bottom:4px}
+.ak-top i{width:9px;height:9px;border-radius:50%;background:#3A4652;display:block}
+.ak-gok{color:#FFFFFF;word-break:break-all}
+.ak-lijst{display:grid;gap:8px}
+.ak-rij{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;transition:border-color .3s ease, background .3s ease}
+.ak-rij code{font-family:var(--f-mono);font-size:.95rem;word-break:break-all}
+.ak-st{font-size:.82rem;font-weight:700;color:var(--muted);white-space:nowrap}
+.ak-rij.bezig{border-color:var(--accent)}
+.ak-rij.weg{border-color:var(--nok);background:var(--nok-bg)} .ak-rij.weg .ak-st{color:var(--nok)}
+.ak-rij.houdt{border-color:var(--ok);background:var(--ok-bg)} .ak-rij.houdt .ak-st{color:var(--ok)}
+@media (prefers-reduced-motion: no-preference){ .ak-rij.weg{animation:akschud .4s ease} }
+@keyframes akschud{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+/* gerucht */
+.ag{display:grid;gap:8px}
+.ag-boven{display:flex;align-items:center;gap:12px}
+.ag-msg{flex:1;border-radius:12px;background:var(--sunk);padding:10px 14px;display:grid;gap:2px;min-height:68px;align-content:center;transition:background .4s ease}
+.ag-n{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.ag-t{font-weight:700;line-height:1.35}
+@media (prefers-reduced-motion: no-preference){ .ag-msg.flits{animation:agf .6s ease} }
+@keyframes agf{from{background:color-mix(in srgb, var(--accent) 30%, var(--sunk))}}
+.ag-msg.breek{background:var(--nok-bg)} .ag-msg.echt{background:var(--ok-bg)}
+.ag-wolk{flex:none;width:76px;display:grid;place-items:center;transition:transform .7s cubic-bezier(.3,1.5,.6,1);transform-origin:center}
+.ag-wolk:empty{display:none}
+.ag-net{width:100%;height:auto;display:block;max-width:440px;margin:0 auto}
+.ag-net .gl{stroke:var(--line);stroke-width:2;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s ease, stroke .4s ease}
+.ag-net .gl.on{stroke-dashoffset:0;stroke:var(--accent)}
+.ag-net .gk{fill:var(--sunk);stroke:var(--line);stroke-width:2;transition:fill .4s ease .5s, stroke .4s ease .5s}
+.ag-net .gk.on{fill:var(--accent);stroke:var(--accent)}
+.ag-net .gk.jij.stop{fill:var(--ok);stroke:var(--ok);transition-delay:0s}
+.ag-jij{font-size:12px;font-weight:700;fill:var(--ok);opacity:0;transition:opacity .4s ease}
+.ag-stop line{stroke:var(--nok);stroke-width:3;stroke-linecap:round}
+.ag-stop{opacity:0;transition:opacity .4s ease}
+.ag-jij.on,.ag-stop.on{opacity:1}
+/* ---------- animaties, reeks 2 ---------- */
+.a-eind{margin-top:12px;border-radius:12px;padding:10px 14px;background:var(--ok-bg);color:var(--ink);font-weight:700;line-height:1.4}
+@media (prefers-reduced-motion: no-preference){ .a-eind,.al-r,.ac-m,.az-r,.ak2-lijst li,.ap2-f,.au-r{animation:ain .45s ease both} }
+@keyframes ain{from{opacity:0;transform:translateY(6px)}}
+/* voorspel */
+.av{display:grid;gap:10px}
+.av-kop{font-size:.8rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.av-zin{font-family:var(--f-display);font-size:1.25rem;font-weight:700;line-height:1.35;min-height:1.4em}
+.av-nieuw{color:var(--accent)}
+.av-bars{display:grid;gap:6px;min-height:96px}
+.av-rij{display:grid;grid-template-columns:96px 1fr 44px;align-items:center;gap:8px;font-size:.92rem;border-radius:8px;padding:2px 4px;transition:background .3s ease}
+.av-w{font-family:var(--f-mono)}
+.av-b{height:12px;background:var(--sunk);border-radius:999px;overflow:hidden}
+.av-b i{display:block;height:100%;background:color-mix(in srgb, var(--accent) 45%, var(--sunk));border-radius:999px;transition:width .8s ease}
+.av-rij.gekozen{background:color-mix(in srgb, var(--accent) 14%, transparent)} .av-rij.gekozen .av-b i{background:var(--accent)}
+.av-p{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+/* lijst */
+.al{display:grid;gap:8px}
+.al-kop{border:2px dashed var(--line);border-radius:12px;padding:10px 14px;font-weight:700;display:grid;gap:2px}
+.al-kl{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.al-r{display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;background:var(--surface);transition:border-color .3s ease, background .3s ease}
+.al-n{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--sunk);font-weight:700;font-size:.85rem}
+.al-t{display:grid;gap:1px;min-width:0} .al-t small{color:var(--muted)}
+.al-p{font-size:.78rem;font-weight:700;border-radius:999px;padding:3px 10px;opacity:0;transform:scale(1.6);transition:opacity .25s ease, transform .35s cubic-bezier(.3,1.6,.6,1);white-space:nowrap}
+.al-p.on{opacity:1;transform:none}
+.al-p.ok{background:var(--ok-bg);color:var(--ok)} .al-p.nok{background:var(--nok-bg);color:var(--nok)} .al-p.vraag{background:var(--sunk);color:var(--muted)} .al-p.todo{background:color-mix(in srgb, var(--accent) 14%, transparent);color:var(--accent)}
+.al-r.st-ok{border-color:color-mix(in srgb, var(--ok) 50%, var(--line))} .al-r.st-nok{border-color:color-mix(in srgb, var(--nok) 50%, var(--line))}
+@media (max-width:520px){ .al-r{grid-template-columns:28px 1fr} .al-p{grid-column:2;justify-self:start} }
+/* chat */
+.ac{display:grid;gap:8px}
+.ac-kop{font-size:.8rem;font-weight:700;color:var(--muted);text-align:center;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.ac-m{max-width:86%;border-radius:16px;padding:9px 13px;line-height:1.4;display:grid;gap:3px;background:var(--sunk);justify-self:start}
+.ac-m.me{background:color-mix(in srgb, var(--accent) 16%, var(--surface));justify-self:end}
+.ac-m.sys{justify-self:center;background:transparent;border:1.5px dashed var(--line);font-size:.88rem;color:var(--muted);text-align:center}
+.ac-m.st-nok{outline:2px solid color-mix(in srgb, var(--nok) 55%, transparent)} .ac-m.st-ok{outline:2px solid color-mix(in srgb, var(--ok) 55%, transparent)}
+.ac-wie{font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.ac-pill{font-size:.75rem;font-weight:700;color:var(--nok)} .ac-m.st-ok .ac-pill{color:var(--ok)}
+.ac-m.typ{display:flex;gap:4px;padding:12px 14px}
+.ac-m.typ i{width:7px;height:7px;border-radius:50%;background:var(--muted);opacity:.5;display:block}
+@media (prefers-reduced-motion: no-preference){ .ac-m.typ i{animation:atyp 1s infinite} .ac-m.typ i:nth-child(2){animation-delay:.15s} .ac-m.typ i:nth-child(3){animation-delay:.3s} }
+@keyframes atyp{50%{opacity:1;transform:translateY(-3px)}}
+/* vlaggen */
+.avl{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
+.avl-kop{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;background:var(--sunk);padding:8px 14px;font-size:.85rem;color:var(--muted)}
+.avl-kop b{color:var(--ink);font-family:var(--f-mono);font-weight:400;word-break:break-all}
+.avl-z{padding:9px 14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;transition:background .35s ease}
+.avl-l{font-size:.76rem;font-weight:700;background:var(--surface);color:var(--nok);border:1.5px solid var(--nok);border-radius:999px;padding:3px 10px;opacity:0;transform:translateX(10px);transition:opacity .3s ease, transform .3s ease}
+.avl-z.on{background:var(--nok-bg)} .avl-z.on .avl-l{opacity:1;transform:none}
+/* krimp */
+.ak2{display:grid;gap:8px}
+.ak2-lab{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.ak2-tekst{line-height:1.55;font-size:.95rem;background:var(--sunk);border-radius:12px;padding:10px 14px;transition:color .8s ease}
+.ak2-tekst .kern{transition:background .8s ease, color .8s ease;border-radius:4px}
+.ak2-tekst.dim{color:color-mix(in srgb, var(--muted) 55%, transparent)} .ak2-tekst.dim .kern{color:var(--ink);background:color-mix(in srgb, var(--accent) 22%, transparent)}
+.ak2-lijst{margin:0;padding:10px 14px 10px 32px;border:1.5px solid var(--accent);border-radius:12px;display:grid;gap:4px;min-height:44px;font-weight:700}
+/* sloten */
+.as{display:grid;gap:10px}
+.as-wie{font-size:.88rem;color:var(--muted);font-weight:700}
+.as-lane{position:relative;height:30px;margin:0 4px}
+.as-mark{position:absolute;top:0;font-size:1.5rem;line-height:1;transform:translateX(-50%);transition:left 1s ease, opacity .6s ease}
+.as-mark.weg{opacity:.3}
+.as-baan{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.as-slot,.as-acc{display:grid;justify-items:center;text-align:center;gap:2px;font-size:.82rem;min-width:0;border:1.5px solid var(--line);border-radius:12px;padding:8px 4px;background:var(--surface);transition:border-color .3s ease, background .3s ease}
+.as-slot small,.as-acc small{color:var(--muted);line-height:1.25}
+.as-ico{font-size:1.6rem;line-height:1.2}
+.as-slot.open{border-color:var(--nok);background:var(--nok-bg)}
+.as-slot.dicht{border-color:var(--ok);background:var(--ok-bg)}
+.as-gsm{justify-self:center;width:min(100%,280px);border:2px solid var(--ink);border-radius:18px;padding:12px;display:grid;gap:8px;text-align:center;font-size:.9rem;opacity:.25;transition:opacity .4s ease}
+.as-gsm.on{opacity:1}
+.as-gk{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.as-gk span{border-radius:10px;padding:6px;font-weight:700;background:var(--sunk);transition:background .3s ease, color .3s ease}
+.as-gsm.nee .as-gk .nee{background:var(--ok-bg);color:var(--ok);box-shadow:inset 0 0 0 2px var(--ok)}
+/* url */
+.au{display:grid;gap:10px}
+.au-kop{font-size:.9rem;color:var(--muted)}
+.au-r{display:grid;gap:6px}
+.au-bar{font-family:var(--f-mono);font-size:.92rem;background:var(--sunk);border:1px solid var(--line);border-radius:10px;padding:8px 12px;word-break:break-all}
+.au-bar span{transition:opacity .5s ease, background .5s ease, color .5s ease;border-radius:4px}
+.au-r.s1 .au-s,.au-r.s1 .au-pad{opacity:.3}
+.au-r.s2 .au-v{opacity:.45} .au-r.s2 .au-e{background:color-mix(in srgb, var(--accent) 25%, transparent);color:var(--ink);font-weight:700;padding:0 2px}
+.au-uit{display:flex;gap:6px;align-items:center;flex-wrap:wrap;font-size:.9rem;opacity:0;transition:opacity .4s ease}
+.au-r.s3 .au-uit{opacity:1}
+.au-p{font-size:.78rem;font-weight:700;border-radius:999px;padding:2px 10px} .au-p.ok{background:var(--ok-bg);color:var(--ok)} .au-p.nok{background:var(--nok-bg);color:var(--nok)}
+/* puzzel */
+.ap2{display:grid;gap:10px}
+.ap2-posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.ap2-post{border:1.5px solid var(--line);border-radius:12px;padding:8px 10px;font-size:.85rem;display:flex;gap:8px;align-items:flex-start;transition:border-color .3s ease, background .3s ease}
+.ap2-post.on{border-color:var(--nok);background:var(--nok-bg)}
+.ap2-i{font-size:1.1rem}
+.ap2-kaart{border:2px dashed var(--nok);border-radius:12px;padding:10px 14px;display:grid;gap:4px;min-height:60px}
+.ap2-f{display:flex;gap:8px;font-size:.92rem} .ap2-f span:first-child{color:var(--nok);font-weight:700}
+.ap2-msg{border-radius:12px;background:var(--sunk);padding:10px 14px;font-size:.92rem;line-height:1.45;opacity:0;transition:opacity .5s ease}
+.ap2-msg.on{opacity:1} .ap2-msg mark{background:color-mix(in srgb, var(--nok) 25%, transparent);color:inherit;border-radius:3px;padding:0 2px}
+/* backup */
+.ab{display:grid;gap:10px}
+.ab-rij{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ab-box{border:1.5px solid var(--line);border-radius:12px;padding:8px;display:grid;gap:2px;align-content:start;min-height:110px;transition:border-color .3s ease, background .3s ease, opacity .4s ease;font-size:.85rem}
+.ab-box small{color:var(--muted);line-height:1.2}
+.ab-fs{display:flex;flex-wrap:wrap;gap:2px;font-size:1.2rem;margin-top:4px;min-height:1.6em}
+.ab-box.los{border-style:dashed} .ab-box.ransom{border-color:var(--nok);background:var(--nok-bg)} .ab-box.terug{border-color:var(--ok);background:var(--ok-bg)}
+.ab-msg{border-radius:12px;background:var(--sunk);padding:9px 14px;font-weight:700;opacity:0;transition:opacity .3s ease, background .3s ease}
+.ab-msg.on{opacity:1} .ab-msg.nok{background:var(--nok-bg);color:var(--nok)} .ab-msg.ok{background:var(--ok-bg);color:var(--ok)}
+@media (max-width:420px){ .ab-box{font-size:.78rem} }
+/* zoek */
+.az{display:grid;gap:8px}
+.az-foto{position:relative;overflow:hidden;display:flex;gap:10px;align-items:center;border:1px dashed var(--line);background:var(--sunk);border-radius:12px;padding:14px;font-style:italic;color:var(--muted)}
+.az-i{font-size:1.5rem;font-style:normal}
+.az-scan{position:absolute;left:-30%;top:0;bottom:0;width:30%;background:linear-gradient(90deg,transparent,color-mix(in srgb, var(--accent) 35%, transparent),transparent);opacity:0}
+@media (prefers-reduced-motion: no-preference){ .az-foto.scan .az-scan{opacity:1;animation:ascan 1.2s linear infinite} }
+@keyframes ascan{to{left:100%}}
+.az-lab{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.az-l{display:grid;gap:6px}
+.az-r{display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:center;border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;transition:border-color .3s ease, background .3s ease}
+.az-r small{color:var(--muted);display:block}
+.az-d{font-family:var(--f-mono);font-size:.85rem}
+.az-r.oudst.on{border-color:var(--ok);background:var(--ok-bg)}
+/* as */
+.aa{display:grid;gap:8px}
+.aa-t{font-family:var(--f-display)}
+.aa-graf{display:grid;grid-template-columns:auto 1fr;gap:8px;height:190px}
+.aa-y{display:flex;flex-direction:column;justify-content:space-between;font-size:.75rem;color:var(--muted);text-align:right;padding-bottom:22px;font-variant-numeric:tabular-nums;transition:color .3s ease}
+.aa-y.flits{color:var(--nok);font-weight:700}
+.aa-kols{display:flex;gap:10px;align-items:stretch;border-left:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:0 8px;margin-bottom:22px;position:relative}
+.aa-kol{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}
+.aa-staaf{width:70%;height:100%;display:flex;align-items:flex-end}
+.aa-staaf i{display:block;width:100%;background:var(--accent);border-radius:4px 4px 0 0;transition:height 1.2s cubic-bezier(.5,0,.3,1);position:relative}
+.aa-v{position:absolute;left:50%;top:-20px;transform:translateX(-50%);font-size:.78rem;font-weight:700;white-space:nowrap}
+.aa-graf{padding-top:18px}
+.aa-x{position:absolute;bottom:-22px;font-size:.78rem;color:var(--muted)}
+.aa-lab{border-radius:10px;padding:8px 12px;font-weight:700;background:var(--sunk);transition:background .3s ease}
+.aa-lab.nok{background:var(--nok-bg);color:var(--nok)} .aa-lab.ok{background:var(--ok-bg);color:var(--ok)}
+/* feed */
+.af{display:grid;gap:10px;justify-items:center}
+.af-tel{width:min(100%,260px);border:2px solid var(--ink);border-radius:22px;padding:10px;display:grid;gap:6px;overflow:hidden}
+.af-top{font-size:.78rem;font-weight:700;text-align:center;color:var(--muted)}
+.af-feed{display:grid;gap:6px}
+@media (prefers-reduced-motion: no-preference){ .af-feed.schuif{animation:aschuif .6s ease} }
+@keyframes aschuif{from{transform:translateY(24px);opacity:.3}}
+.af-post{display:flex;align-items:center;gap:8px;border-radius:10px;padding:7px 10px;font-size:.85rem;background:var(--sunk)}
+.af-dot{width:12px;height:12px;border-radius:50%;flex:none}
+.af-post.o0 .af-dot{background:var(--p1)} .af-post.o1 .af-dot{background:var(--p2)} .af-post.o2 .af-dot{background:var(--p3)} .af-post.o3 .af-dot{background:var(--p4)}
+.af-post.o0{background:color-mix(in srgb, var(--p1) 16%, var(--sunk))}
+.af-like{margin-left:auto;color:var(--nok)}
+.af-lab{text-align:center;font-weight:700;min-height:1.4em;max-width:46ch} .af-lab.ok{color:var(--ok)}
+/* knip */
+.ak3{display:grid;gap:8px}
+.ak3-lab{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.ak3-zin{font-family:var(--f-display);font-size:1.12rem;line-height:1.45;background:var(--sunk);border-radius:12px;padding:12px 14px}
+.ak3-zin .weg{transition:opacity .8s ease, text-decoration-color .5s ease}
+.ak3-zin.knip .weg{opacity:.35;text-decoration:line-through;text-decoration-color:var(--nok)}
+.ak3-zin.kort .weg{opacity:.08}
+.ak3-zin .hou{transition:background .5s ease}
+.ak3-zin.knip .hou{background:color-mix(in srgb, var(--nok) 22%, transparent);border-radius:4px}
+.ak3-zin.vol .hou{background:color-mix(in srgb, var(--ok) 22%, transparent);border-radius:4px}
+.ak3-post{border:1.5px solid var(--line);border-radius:12px;padding:10px 14px;font-weight:700;opacity:0;transform:translateY(6px);transition:opacity .4s ease, transform .4s ease}
+.ak3-post.on{opacity:1;transform:none;border-color:var(--nok)}
+.ak3-post.weg{opacity:.45;text-decoration:line-through}
 
 /* ===== Veilig Online Lab ===== */
 .kamHero{display:inline-flex;align-items:flex-end;margin-left:18px}
@@ -750,6 +972,7 @@ const L = [
   jong:{
     gids:'Maak kennis met het Gerucht! Dat wolkje wordt groter elke keer iemand iets doorstuurt zonder te checken. En jij kan het klein houden.',
     uitleg:'Een gerucht begint klein: één bericht, één persoon. Maar elke keer iemand het doorstuurt, groeit het. Na een paar keer weet niemand nog wie het begon, en voelt het als “iedereen zegt het”. Over een klasgenoot kan dat heel veel pijn doen. Het goede nieuws: <b>jij kan de ketting breken</b>. Niet doorsturen, en vragen: “Klopt dat wel?”',
+    anim:{"soort": "gerucht", "titel": "Zo groeit een gerucht", "versies": ["Lisa ziet Tom praten met de directeur.", "“Zou Tom in de problemen zitten?”", "“Tom zit in de problemen!”", "“Tom is geschorst!”"], "breek": "Jij stuurt het niet door. Hier stopt de ketting.", "echt": "Tom vroeg gewoon of hij de schoolkrant mocht helpen.", "onder": "Bij elke stap wordt het verhaal een beetje groter. Eén persoon die niet doorstuurt, houdt het tegen."},
     voorbeeld:{kind:'stappen', rood:true, titel:'Hoe het Gerucht groeit', stappen:[
       {t:'Lisa ziet Tom praten met de directeur', s:'Ze vraagt zich af waarom'},
       {t:'“Tom zit misschien in de problemen”', s:'Lisa stuurt het naar 2 vriendinnen'},
@@ -768,6 +991,7 @@ const L = [
   tiener:{
     gids:'Een gerucht heeft geen begin meer zodra het drie keer gedeeld is. Dan is het gewoon “iets wat iedereen zegt”.',
     uitleg:'Bij elke stap verandert een verhaal een beetje: details vallen weg, het wordt dramatischer, de bron verdwijnt. Screenshots maken het erger: ze zien eruit als bewijs, maar zijn makkelijk te bewerken of uit hun context te halen. Het Gerucht groeit door <b>gemakzucht</b>, niet door kwade wil. Daarom heeft elke schakel een keuze: doorsturen, of de ketting breken.',
+    anim:{"soort": "gerucht", "titel": "Zo groeit een gerucht", "versies": ["Een screenshot van een chat, zonder de berichten ervoor.", "“Kijk wat Emma zei 😳”", "“Emma lacht jullie uit.”", "“Emma haat onze klas!”"], "breek": "Jij stuurt het niet door. Hier stopt de ketting.", "echt": "In het volledige gesprek maakte Emma een grapje over zichzelf.", "onder": "Context valt weg, de toon wordt scherper, de bron verdwijnt. Eén schakel die niet doorstuurt, breekt de ketting."},
     voorbeeld:{kind:'stappen', rood:true, titel:'Van screenshot tot “iedereen weet het”', stappen:[
       {t:'Een screenshot van een chat gaat rond', s:'Zonder de berichten ervoor en erna'},
       {t:'Iemand schrijft er een conclusie bij', s:'“Kijk wat zij over jullie zegt”'},
@@ -788,6 +1012,7 @@ const L = [
   volw:{
     gids:'Een gerucht heeft geen afzender meer zodra het een paar keer doorgestuurd is. Dan heet het “men zegt”.',
     uitleg:'Bij elke stap verandert een verhaal: details vallen weg, de toon wordt scherper, de oorspronkelijke bron verdwijnt. Wie het doorstuurt, doet dat meestal met goede bedoelingen: “ik wil anderen waarschuwen”. Toch maakt elke doorgestuurde versie het gerucht geloofwaardiger. Een lokaal gerucht over een winkel, een school of een persoon kan echte schade aanrichten. Jij kan het tegenhouden door niet door te sturen wat je niet gecheckt hebt.',
+    anim:{"soort": "gerucht", "titel": "Zo groeit een gerucht", "versies": ["De bakker is een week dicht.", "“Zou de bakker failliet zijn?”", "“De bakker is failliet.”", "“Iedereen weet dat de bakker failliet is.”"], "breek": "Jij stuurt het niet door. Hier stopt de ketting.", "echt": "Op het briefje aan de deur stond: dicht wegens verbouwing, maandag weer open.", "onder": "Een vraag wordt een bewering, en een bewering wordt “iedereen weet het”. Eén persoon die niet doorstuurt, houdt het tegen."},
     voorbeeld:{kind:'stappen', rood:true, titel:'Hoe een lokaal gerucht groeit', stappen:[
       {t:'De bakker op de hoek is een week dicht', s:'Wegens verbouwing, staat op het briefje aan de deur'},
       {t:'“Zou de bakker failliet zijn?”', s:'Vraag in een buurtgroep'},
@@ -879,6 +1104,7 @@ L.push(
   jong:{
     gids:'Sommige sites zien eruit als een echte krant, maar zijn nep. Ze willen vooral dat je klikt, want elke klik brengt geld op.',
     uitleg:'Een nepsite kopieert vaak het uitzicht van een echte nieuwssite. Kijk daarom naar het <b>webadres</b>: is het echt de naam van de krant, of iets wat erop lijkt? Kijk of er een pagina <b>“over ons”</b> is met echte namen. En let op: staat de site vol met <b>flitsende reclame</b> en schreeuwerige titels? Twijfel je, zoek het nieuws dan op bij een nieuwssite die je kent.',
+    anim:{"soort": "url", "titel": "Echte nieuwssite of kopie?", "kop": "De echte site van VRT NWS begint met <b>vrt.be</b>.", "okTekst": "✓ echt", "nokTekst": "✗ kopie", "urls": [{"u": "https://www.vrt.be/vrtnws/nl/", "ok": true}, {"u": "https://www.vrt-nieuws-vandaag.com/schok", "ok": false}], "onder": "Een nepsite kan het uitzicht kopiëren, het webadres niet. Kijk naar de naam vlak voor .be of .com."},
     voorbeeld:{kind:'bericht', kanaal:'site', van:'www.vrt-nieuws-vandaag.com', zinnen:[
       {t:'Webadres: vrt-nieuws-vandaag.com', vlag:true, u:'Lijkt op VRT NWS, maar is het niet'},
       {t:'SCHOK: Alle smartphones verboden voor kinderen!', vlag:true, u:'Schreeuwerige titel'},
@@ -899,6 +1125,7 @@ L.push(
   tiener:{
     gids:'Nepsites zijn soms zo goed nagemaakt dat zelfs journalisten twijfelen. Gelukkig zijn er een paar vaste checks.',
     uitleg:'Er bestaan hele netwerken van nepsites die het uitzicht van echte media kopiëren, met een adres dat er net op lijkt. Check: het <b>domein</b> (is het echt het medium?), het <b>colofon</b> of “over ons” (staan er echte journalisten en een adres?), <b>datum en auteur</b> bij het artikel, en of <b>andere media</b> hetzelfde melden. Groot nieuws staat nooit op één site alleen.',
+    anim:{"soort": "url", "titel": "Echte nieuwssite of kopie?", "kop": "De echte site is <b>standaard.be</b>.", "okTekst": "✓ echt", "nokTekst": "✗ kopie", "urls": [{"u": "https://www.standaard.be/cnt/dmf2026", "ok": true}, {"u": "https://standaard.be.artikel-update.com/nieuws", "ok": false}], "onder": "Nepsites gebruiken een adres dat er net op lijkt. Van de servernaam tellen de laatste twee delen."},
     voorbeeld:{kind:'pijlen', titel:'Vier checks voor een nieuwssite', kop:['Check','Wat zoek je?'], rijen:[
       ['Domein','Is het adres echt van het medium, of een kopie met een extra woord?'],
       ['Colofon / over ons','Echte namen, een adres, een hoofdredacteur'],
@@ -919,6 +1146,7 @@ L.push(
   volw:{
     gids:'Er circuleren sites die het uitzicht van een bekende krant overnemen, met een adres dat er net op lijkt. Ik toon je de checks die wij gebruiken.',
     uitleg:'Controleer het <b>domein</b>: is het echt het adres van het medium, of een variant met een extra woord of een andere extensie? Kijk naar het <b>colofon</b> of “over ons”: een echte nieuwssite vermeldt een hoofdredacteur, een adres en journalisten. Kijk of er een <b>auteur en datum</b> bij het artikel staan. En zoek of <b>andere media</b> hetzelfde melden: groot nieuws staat nooit op één site.',
+    anim:{"soort": "url", "titel": "Echte nieuwssite of kopie?", "kop": "De echte site is <b>hln.be</b>.", "okTekst": "✓ echt", "nokTekst": "✗ kopie", "urls": [{"u": "https://www.hln.be/binnenland", "ok": true}, {"u": "https://hln.be.lees-meer.co/binnenland", "ok": false}], "onder": "Het uitzicht kan je kopiëren, het domein niet. Kijk wie de eigenaar is: de laatste twee delen voor de eerste /."},
     voorbeeld:{kind:'pijlen', titel:'Vier checks voor een nieuwssite', kop:['Check','Waar let je op?'], rijen:[
       ['Domein','Het juiste adres, zonder extra woorden of vreemde extensie'],
       ['Colofon','Hoofdredacteur, adres, echte namen'],
@@ -1066,6 +1294,7 @@ L.push(
   jong:{
     gids:'Halte 3! Een foto kan helemaal echt zijn en toch liegen. Hoe? Door hem bij het verkeerde verhaal te zetten.',
     uitleg:'Soms is een foto <b>echt</b>, maar <b>oud</b>, of van een <b>andere plek</b>. Iemand zet hem bij een nieuw verhaal, en iedereen gelooft het. Daarom kan je <b>omgekeerd zoeken</b>: je laadt de foto op in een zoekmachine (zoals Google Lens) en die toont waar de foto al eerder stond. Staat hij er al jaren? Dan klopt het nieuwe verhaal niet.',
+    anim:{"soort": "zoek", "titel": "Omgekeerd zoeken in actie", "foto": "Een straat vol water: “NU: overstroming in Gent!!”", "hits": [{"datum": "vandaag", "site": "@nieuws.flash", "t": "NU: overstroming in Gent!!"}, {"datum": "2023", "site": "fotoforum.be", "t": "Wauw, kijk naar dit water 😮"}, {"datum": "14 juli 2021", "site": "weerbericht-archief.nl", "t": "Zware overstromingen in Valkenburg", "oudst": true}], "onder": "De oudste versie van een foto vertelt het echte verhaal.", "eind": "De foto is van 2021, uit Nederland. Niet uit Gent, en niet van nu."},
     voorbeeld:{kind:'stappen', titel:'Omgekeerd zoeken in drie stappen', stappen:[
       {t:'Bewaar de foto of maak een screenshot', s:'Of druk lang op de foto'},
       {t:'Zoek met de foto in plaats van met woorden', s:'Bijvoorbeeld met Google Lens'},
@@ -1087,6 +1316,7 @@ L.push(
   tiener:{
     gids:'De meest gedeelde nepfoto’s zijn niet bewerkt. Ze zijn gewoon echt, maar uit hun verband gehaald.',
     uitleg:'Bij grote gebeurtenissen (een storm, een betoging, een oorlog) duiken altijd <b>oude foto’s</b> op die als nieuw gedeeld worden, of foto’s van een <b>andere plek</b>. Met <b>omgekeerd zoeken</b> (Google Lens, TinEye, Bing Visual Search) vind je eerdere versies. Kijk ook naar <b>details</b>: verkeersborden, nummerplaten, taal op winkels, het weer. Passen die bij het verhaal?',
+    anim:{"soort": "zoek", "titel": "Omgekeerd zoeken in actie", "foto": "Rook en politiebusjes: “Rellen in Antwerpen vannacht 🔥”", "hits": [{"datum": "vandaag", "site": "@actua.be.now", "t": "Rellen in Antwerpen vannacht 🔥"}, {"datum": "2022", "site": "@urbanpics", "t": "Wat een beeld…"}, {"datum": "2 mei 2019", "site": "persagentschap-fotos.com", "t": "Onrust na voetbalmatch in Marseille", "oudst": true}], "onder": "Zoek met de foto zelf, en kijk naar de oudste resultaten.", "eind": "Een andere stad, zeven jaar geleden. Geen rellen in Antwerpen."},
     voorbeeld:{kind:'pijlen', titel:'Details die verraden', kop:['Detail','Wat vraag je je af?'], rijen:[
       ['Taal op borden','Spreken ze daar die taal?'],
       ['Nummerplaten en verkeersborden','Uit welk land komen ze?'],
@@ -1109,6 +1339,7 @@ L.push(
   volw:{
     gids:'Bij elke storm of ramp zien we op de redactie oude foto’s opduiken die als nieuw gedeeld worden. Zo check je ze.',
     uitleg:'Veel misleidende beelden zijn <b>echt</b>, maar <b>oud</b> of van een <b>andere plek</b>. Met <b>omgekeerd zoeken</b> (Google Lens, TinEye of Bing) zoek je met de foto zelf en vind je eerdere publicaties. De oudste versie vertelt meestal waar en wanneer de foto genomen is. Let ook op details: taal op borden, nummerplaten, het seizoen.',
+    anim:{"soort": "zoek", "titel": "Omgekeerd zoeken in actie", "foto": "Lege winkelrekken: “Zo ziet het er nu uit hier!”", "hits": [{"datum": "vandaag", "site": "Familiegroep", "t": "Zo ziet het er nu uit… Sla voorraad in!"}, {"datum": "2024", "site": "buurtforum.be", "t": "Lege rekken? Iemand dit ook gezien?"}, {"datum": "18 maart 2020", "site": "nieuwsarchief.co.uk", "t": "Shoppers strip shelves as lockdown looms", "oudst": true}], "onder": "Met Google Lens, TinEye of Bing zoek je met de foto zelf. De oudste publicatie vertelt waar hij vandaan komt.", "eind": "Een Britse foto uit 2020. Geen beeld van vandaag."},
     voorbeeld:{kind:'stappen', titel:'Omgekeerd zoeken', stappen:[
       {t:'Sla de foto op of maak een screenshot', s:'Op een gsm: lang drukken op de foto'},
       {t:'Open Google Lens, TinEye of Bing', s:'Zoek met de afbeelding in plaats van met woorden'},
@@ -1330,6 +1561,7 @@ L.push(
   jong:{
     gids:'Halte 4! Een grafiek kan doen alsof iets heel hard stijgt, terwijl het bijna niet verandert. De truc zit vaak onderaan.',
     uitleg:'Kijk altijd waar de <b>onderkant</b> van een grafiek begint. Begint die niet bij <b>0</b>, dan lijken kleine verschillen enorm. Kijk ook naar de <b>getallen</b> bij de staven, niet alleen naar hoe hoog ze zijn. In de oefening kan je na je antwoord de eerlijke versie bekijken.',
+    anim:{"soort": "as", "titel": "Dezelfde cijfers, eerlijk getekend", "titelGrafiek": "Stemmen voor het schoolfeest", "eenheid": "", "vanaf": 95, "punten": [{"l": "Disco", "v": 98}, {"l": "Quiz", "v": 104}], "labVoor": "Lijkt alsof de quiz dubbel zoveel stemmen kreeg", "labTussen": "Kijk naar de onderkant: die begint bij 95…", "labNa": "Vanaf 0: 98 tegen 104, bijna gelijk", "onder": "Kijk altijd waar de onderkant van een grafiek begint."},
     voorbeeld:{kind:'grafiek', titelGrafiek:'Leerlingen die met de fiets komen', eenheid:'', vanaf:400, stap:10, punten:[{l:'2024',v:410},{l:'2025',v:418},{l:'2026',v:425}], links:'Lijkt een enorme stijging', rechts:'Eigenlijk een kleine stijging',
       noot:'Van 410 naar 425 is maar 15 leerlingen meer. Links lijkt het alsof het verdubbelt, omdat de onderkant bij 400 begint.'},
     oef:[
@@ -1346,6 +1578,7 @@ L.push(
   tiener:{
     gids:'Grafieken lijken objectief. Maar wie de grafiek maakt, kiest de as, de periode en de schaal. En daarmee het verhaal.',
     uitleg:'Klassieke trucs: een <b>as die niet bij 0 begint</b>, waardoor kleine verschillen groot lijken; een <b>gekozen periode</b> (net dat stukje waar het daalt); <b>ontbrekende eenheden</b>; en twee lijnen met <b>verschillende assen</b>. Kijk dus altijd naar de as, de getallen, de periode en de bron. In de oefening kan je na je antwoord de eerlijke versie bekijken.',
+    anim:{"soort": "as", "titel": "Dezelfde cijfers, eerlijk getekend", "titelGrafiek": "Werkloosheid", "eenheid": "%", "vanaf": 5.6, "punten": [{"l": "2023", "v": 5.8}, {"l": "2024", "v": 6.0}, {"l": "2025", "v": 6.2}], "labVoor": "“Werkloosheid ontploft!”", "labTussen": "De as begint bij 5,6 procent…", "labNa": "Vanaf 0: een lichte stijging, 0,4 procentpunt", "onder": "Een afgeknipte as maakt kleine verschillen groot. Kijk naar de as en de getallen, niet naar de vorm."},
     voorbeeld:{kind:'grafiek', titelGrafiek:'Volgers van een influencer', eenheid:'k', vanaf:200, stap:5, punten:[{l:'jan',v:204},{l:'feb',v:207},{l:'mrt',v:211},{l:'apr',v:215}], soort:'lijn', links:'“Explosieve groei!”', rechts:'Met de as vanaf 0',
       noot:'Van 204.000 naar 215.000 is ongeveer 5 procent groei. Links lijkt het een raket.'},
     oef:[
@@ -1364,6 +1597,7 @@ L.push(
   volw:{
     gids:'Bij elke grafiek in de krant vraagt de eindredactie: begint de as bij nul, en klopt de periode? Die vragen kan jij ook stellen.',
     uitleg:'Een grafiek kan misleiden door een <b>as die niet bij 0 begint</b>, door een <b>zorgvuldig gekozen periode</b>, door <b>ontbrekende eenheden</b> of door twee reeksen met <b>verschillende schalen</b>. Kijk dus naar de as, de getallen, de periode en de bron, niet alleen naar de vorm. In de oefening kan je na je antwoord de eerlijke versie bekijken.',
+    anim:{"soort": "as", "titel": "Dezelfde cijfers, eerlijk getekend", "titelGrafiek": "Prijs van een brood", "eenheid": " €", "vanaf": 3.25, "punten": [{"l": "2024", "v": 3.3}, {"l": "2025", "v": 3.4}, {"l": "2026", "v": 3.5}], "labVoor": "“Broodprijs ontploft”", "labTussen": "De as begint bij 3,25 euro…", "labNa": "Vanaf 0: twintig cent duurder in twee jaar", "onder": "Kijk naar de as en de periode, niet alleen naar de vorm van de grafiek."},
     voorbeeld:{kind:'grafiek', titelGrafiek:'Prijs van een brood', eenheid:' €', vanaf:3.2, stap:0.1, punten:[{l:'2024',v:3.3},{l:'2025',v:3.4},{l:'2026',v:3.5}], links:'“Broodprijs ontploft”', rechts:'Met de as vanaf 0',
       noot:'Twintig cent duurder in twee jaar. Links lijkt het alsof de prijs verdrievoudigd is.'},
     oef:[
@@ -1573,6 +1807,7 @@ L.push(
   jong:{
     gids:'Als je feed alleen nog toont wat je al leuk vindt, zit je in een bubbel. En vanuit een bubbel lijkt de wereld anders dan hij is.',
     uitleg:'In een <b>filterbubbel</b> zie je vooral berichten die passen bij wat je al vindt of leuk vindt. Dan ga je denken dat <b>iedereen</b> zo denkt. Volgt iedereen in je feed één voetbalclub, dan lijkt het alsof die club de populairste ter wereld is. Je kan je bubbel <b>breken</b>: volg ook eens iets nieuws, zoek zelf op in plaats van alleen te scrollen, en praat met mensen die anders denken.',
+    anim:{"soort": "feed", "titel": "Hoe een filterbubbel ontstaat", "app": "Voor jou", "onderwerpen": ["Kattenfilmpjes", "Voetbal", "Tekenen", "Nieuws"], "lab0": "Je feed is gevarieerd.", "labs": ["Je liket een kattenfilmpje ♥", "Nog eentje ♥ … het algoritme leert snel", "Je ziet bijna alleen nog katten"], "uit": [0, 2, 1, 0, 3, 2], "labUit": "Je volgt ook iets nieuws: je feed wordt weer gevarieerd", "onder": "Het algoritme toont meer van wat je liket. Volg zelf ook eens iets nieuws."},
     voorbeeld:{kind:'duo', links:{goed:false, pill:'In de bubbel', titel:'Lina’s feed', items:['Alleen filmpjes van één zangeres','“Iedereen vindt haar de beste!”','Nooit iets anders gezien']},
       rechts:{goed:true, pill:'Bubbel breken', titel:'Lina na een week', items:['Volgt ook een muziekzender','Ziet dat er veel verschillende smaken zijn','Vindt haar zangeres nog altijd top']},
       waarom:'Lina mag haar zangeres de beste vinden. Ze weet nu wel dat niet iedereen dat vindt.'},
@@ -1590,6 +1825,7 @@ L.push(
   tiener:{
     gids:'Ken je dat gevoel dat “iedereen” iets vindt? Dat is soms gewoon je feed die je hetzelfde blijft tonen.',
     uitleg:'Een <b>filterbubbel</b> ontstaat als een algoritme je vooral toont wat bij je past. Een <b>echokamer</b> ontstaat als je vooral omgaat met mensen die hetzelfde denken. Samen geven ze de indruk dat <b>iedereen</b> het met je eens is, en dat anderen dom of kwaadaardig zijn. Je doorbreekt het door bewust <b>andere bronnen</b> te volgen, nieuws ook buiten je feed te lezen, en de <b>sterkste versie</b> van een andere mening op te zoeken.',
+    anim:{"soort": "feed", "titel": "Hoe een filterbubbel ontstaat", "app": "Voor jou", "onderwerpen": ["Eén mening over het klimaat", "Muziek", "Sport", "Andere meningen"], "lab0": "Je feed toont van alles.", "labs": ["Je kijkt een filmpje tot het einde ♥", "Je reageert boos in de comments: ook dat telt", "Je ziet bijna alleen nog dezelfde mening"], "uit": [0, 3, 1, 3, 2, 0], "labUit": "Je volgt bewust accounts met een andere kijk", "onder": "Een algoritme toont wat je vasthoudt. Zo lijkt het alsof iedereen hetzelfde vindt."},
     voorbeeld:{kind:'pijlen', titel:'Je bubbel doorprikken', kop:['In de bubbel','Uit de bubbel'], rijen:[
       ['Alleen je feed','Ook een nieuwssite of nieuwsapp openen'],
       ['Accounts die je gelijk geven','Ook iemand met een andere kijk volgen'],
@@ -1611,6 +1847,7 @@ L.push(
   volw:{
     gids:'Een familiegroep, een buurtgroep, een feed: na een tijd lijkt het alsof iedereen hetzelfde denkt. Dat is een bubbel.',
     uitleg:'Een <b>filterbubbel</b> ontstaat als een algoritme je vooral toont wat bij je voorkeuren past. Een <b>echokamer</b> ontstaat in groepen waar iedereen hetzelfde denkt en elkaar bevestigt, ook in een familie- of buurtgroep. Het gevolg: je denkt dat <b>iedereen</b> het met je eens is, en andere meningen lijken vreemd. Je doorbreekt dat door bewust <b>verschillende media</b> te lezen en te luisteren naar wie anders denkt.',
+    anim:{"soort": "feed", "titel": "Hoe een filterbubbel ontstaat", "app": "Nieuwsfeed", "onderwerpen": ["Tegen het circulatieplan", "Buurtnieuws", "Recepten", "Voor het circulatieplan"], "lab0": "Je feed toont van alles.", "labs": ["Je liket een bericht tegen het plan ♥", "Je deelt er nog een ♥", "“Iedereen is ertegen”, lijkt het"], "uit": [0, 3, 1, 3, 0, 2], "labUit": "Je leest ook nieuws buiten je feed", "onder": "Je feed is geen afspiegeling van iedereen. Lees af en toe nieuws buiten je feed, bij verschillende media."},
     voorbeeld:{kind:'duo', links:{goed:false, pill:'In de bubbel', titel:'Wat Marc ziet', items:['Feed vol berichten tegen het nieuwe circulatieplan','Buurtgroep vindt het een ramp','“Iedereen is ertegen”']},
       rechts:{goed:true, pill:'Breder', titel:'Wat de bevraging zegt', items:['Bewoners zijn verdeeld','Ouders met kinderen zijn vaak voor','Winkeliers vaak tegen']},
       waarom:'Marc mag tegen zijn. Maar “iedereen is ertegen” klopt niet, en dat weet hij nu.'},
@@ -1764,6 +2001,7 @@ L.push(
   jong:{
     gids:'Halte 6! De slimste trucs zijn niet helemaal gelogen. Er zit een stukje waarheid in, maar het belangrijkste ontbreekt.',
     uitleg:'Een <b>halve waarheid</b> is een bericht waarin iets klopt, maar waarin net een belangrijk stuk <b>weggelaten</b> is. “Lucas heeft een 3 op 10 voor wiskunde!” Klopt. Maar als je erbij zegt dat iedereen in de klas onder de 5 had, omdat de toets veel te moeilijk was, is het een heel ander verhaal. Vraag je dus altijd af: <b>wat wordt er niet gezegd?</b>',
+    anim:{"soort": "knip", "titel": "Een zin wordt geknipt", "zin": "Sommige kinderen zeggen: [[we moeten de speeltijd afschaffen]]. Ik vind dat een heel slecht idee.", "post": "Juf Ann: “We moeten de speeltijd afschaffen” 😡", "labVol": "Wat juf Ann echt zei", "onder": "Elk woord klopt, toch is de boodschap omgedraaid. Zoek altijd de volledige zin."},
     voorbeeld:{kind:'duo', links:{goed:false, pill:'Half', titel:'Wat rondgaat', tekst:'Het nieuwe zwembad kost 10 miljoen euro!', extra:'Klinkt als heel veel geld weggegooid.'},
       rechts:{goed:true, pill:'Volledig', titel:'Het hele verhaal', tekst:'Het nieuwe zwembad kost 10 miljoen euro. Het oude was 50 jaar oud en lekte. Het nieuwe gaat 40 jaar mee.', extra:'Dezelfde 10 miljoen, een ander verhaal.'},
       waarom:'Het bedrag klopt. Maar zonder de rest van het verhaal denk je er iets anders over.'},
@@ -1781,6 +2019,7 @@ L.push(
   tiener:{
     gids:'De beste desinformatie bevat geen enkele leugen. Ze kiest gewoon welke feiten je te zien krijgt.',
     uitleg:'<b>Halve waarheden</b> werken met echte feiten, maar laten de <b>context</b> weg. Een citaat zonder de rest van de zin. Een cijfer zonder vergelijking. Een gebeurtenis zonder wat ervoor gebeurde. Omdat elk stukje klopt, is het moeilijk te weerleggen. De vraag die je stelt: <b>wat ontbreekt er</b>, en zou dat het verhaal veranderen?',
+    anim:{"soort": "knip", "titel": "Een citaat uit zijn verband", "zin": "Sommigen zeggen: [[we moeten de jeugdhuizen sluiten]]. Ik zeg: we moeten ze net meer geld geven.", "post": "Schepen: “We moeten de jeugdhuizen sluiten.” Ze haten jongeren!", "labVol": "Wat de schepen echt zei", "onder": "Een citaat zonder de rest van de zin kan het omgekeerde betekenen."},
     voorbeeld:{kind:'duo', links:{goed:false, pill:'Citaat', titel:'Zoals gedeeld', tekst:'Schepen: “We moeten de jeugdhuizen sluiten.”', extra:'Gedeeld met “Ze haten jongeren!”'},
       rechts:{goed:true, pill:'Volledig', titel:'Wat ze echt zei', tekst:'“Sommigen zeggen: we moeten de jeugdhuizen sluiten. Ik zeg: we moeten ze net meer geld geven.”', extra:'Precies het omgekeerde.'},
       waarom:'Elk woord in het citaat klopt. Toch is de boodschap omgedraaid.'},
@@ -1799,6 +2038,7 @@ L.push(
   volw:{
     gids:'Een halve waarheid is moeilijker te weerleggen dan een leugen. Je kan immers niet zeggen dat het niet klopt.',
     uitleg:'<b>Halve waarheden</b> gebruiken echte feiten maar laten de <b>context</b> weg: een citaat zonder de rest van de zin, een bedrag zonder vergelijking, een gebeurtenis zonder aanleiding. Omdat elk onderdeel klopt, voelt het overtuigend. Vraag je af: <b>wat wordt er niet gezegd</b>, en zou dat mijn oordeel veranderen?',
+    anim:{"soort": "knip", "titel": "Een citaat uit zijn verband", "zin": "Veel mensen denken: [[dit vaccin is gevaarlijk]]. Dat blijkt niet uit de cijfers.", "post": "Arts: “Dit vaccin is gevaarlijk.” Zie je wel!", "labVol": "Wat de arts echt zei", "onder": "Elk woord klopt, maar de betekenis keert om. Zoek de volledige uitspraak, bij de zender of de organisatie zelf."},
     voorbeeld:{kind:'duo', links:{goed:false, pill:'Half', titel:'Wat rondgaat', tekst:'De gemeente gaf 2 miljoen euro uit aan één rotonde!', extra:'Gedeeld met “Ons belastinggeld!”'},
       rechts:{goed:true, pill:'Volledig', titel:'Het hele verhaal', tekst:'Het project kostte 2 miljoen, waarvan 1,5 miljoen betaald werd door de Vlaamse overheid. Het omvatte ook nieuwe riolering en fietspaden.', extra:'Dezelfde 2 miljoen, een ander beeld.'},
       waarom:'Het bedrag klopt. De rest van de informatie verandert het oordeel.'},
@@ -2011,6 +2251,7 @@ L.push(
   jong:{
     gids:'Halte 7! Nu word jij de speurder. En het eerste wat een speurder doet? Niet rennen. Vertragen.',
     uitleg:'Voor je iets deelt, doorloop je vier stappen. <b>Stop</b>: druk niet meteen op delen. <b>Denk</b>: wat voel ik, en wie zegt dit? <b>Check</b>: zoek of een betrouwbare bron hetzelfde zegt. <b>Deel</b>: pas als het klopt, of helemaal niet. Het kost maar een halve minuut, en het Gerucht krijgt geen kans.',
+    anim:{"soort": "lijst", "titel": "Stop, denk, check, deel in actie", "kopLabel": "Bericht in de klasgroep", "kop": "“Morgen is het officieel GEEN school in heel België!!! Deel snel!”", "items": [{"t": "Stop", "s": "Je drukt niet meteen op Delen", "p": "even wachten", "st": "todo"}, {"t": "Denk", "s": "Je wordt blij. Maar wie zegt dit? Een onbekend account.", "p": "rode vlag", "st": "nok"}, {"t": "Check", "s": "Op de site van de school staat niets", "p": "klopt niet", "st": "nok"}, {"t": "Deel", "s": "Je deelt het niet", "p": "✓ ketting gebroken", "st": "ok"}], "onder": "Een halve minuut is genoeg. Het Gerucht krijgt geen kans."},
     voorbeeld:{kind:'stappen', titel:'Stop, denk, check, deel', stappen:[
       {t:'Stop', s:'Niet meteen op delen drukken'},
       {t:'Denk', s:'Wat voel ik? Wie zegt dit?'},
@@ -2029,6 +2270,7 @@ L.push(
   tiener:{
     gids:'De beste factcheckers zijn niet sneller dan jij. Ze zijn trager op het juiste moment.',
     uitleg:'Een eenvoudige routine helpt: <b>Stop</b> (niet meteen reageren of delen), <b>Denk</b> (wat voel ik, wie zegt dit, wat wil die persoon?), <b>Check</b> (wat zeggen andere bronnen?), <b>Deel</b> (alleen wat klopt, en met context). Het gaat niet om alles wantrouwen. Het gaat om <b>niet de volgende schakel</b> zijn in iets wat niet klopt.',
+    anim:{"soort": "lijst", "titel": "Stop, denk, check, deel in actie", "kopLabel": "Post van @breaking.belgie", "kop": "“NU: alle examens geschrapt na hack van Smartschool!!”", "items": [{"t": "Stop", "s": "De emotie mag even zakken", "p": "even wachten", "st": "todo"}, {"t": "Denk", "s": "Onbekend account, groot nieuws, geen bron", "p": "rode vlag", "st": "nok"}, {"t": "Check", "s": "Geen enkel nieuwsmedium meldt het, de school ook niet", "p": "klopt niet", "st": "nok"}, {"t": "Deel", "s": "Niet gedeeld", "p": "✓ ketting gebroken", "st": "ok"}], "onder": "De meeste foute berichten worden gedeeld door gehaaste mensen, niet door kwaadwillige."},
     voorbeeld:{kind:'stappen', titel:'Stop, denk, check, deel', stappen:[
       {t:'Stop', s:'De emotie mag even zakken'},
       {t:'Denk', s:'Wie zegt dit, en waarom?'},
@@ -2047,6 +2289,7 @@ L.push(
   volw:{
     gids:'Op de redactie hebben we een vaste regel: liever tweede en juist dan eerste en fout. Dat geldt ook voor jou.',
     uitleg:'Een eenvoudige routine voor je iets doorstuurt: <b>Stop</b> (niet meteen reageren), <b>Denk</b> (wat voel ik, wie is de afzender, wat wil die?), <b>Check</b> (wat zeggen andere, betrouwbare bronnen?), <b>Deel</b> (alleen wat klopt, liefst met de bron erbij). De meeste foute berichten worden doorgestuurd door mensen met goede bedoelingen en weinig tijd.',
+    anim:{"soort": "lijst", "titel": "Stop, denk, check, deel in actie", "kopLabel": "Doorgestuurd in de familiegroep", "kop": "“Vanaf volgende week moet iedereen boven 65 opnieuw zijn rijbewijs halen!”", "items": [{"t": "Stop", "s": "Je stuurt het niet meteen door", "p": "even wachten", "st": "todo"}, {"t": "Denk", "s": "Groot nieuws, geen afzender, geen bron", "p": "rode vlag", "st": "nok"}, {"t": "Check", "s": "Niets te vinden bij de overheid of bij nieuwsmedia", "p": "klopt niet", "st": "nok"}, {"t": "Deel", "s": "Niet doorgestuurd, wel een vriendelijke reactie", "p": "✓ ketting gebroken", "st": "ok"}], "onder": "Liever tweede en juist dan eerste en fout."},
     voorbeeld:{kind:'stappen', titel:'Stop, denk, check, deel', stappen:[
       {t:'Stop', s:'Niet meteen doorsturen'},
       {t:'Denk', s:'Wie is de afzender, en wat wil die?'},
@@ -2319,6 +2562,7 @@ L.push(
   jong:{
     gids:'De laatste halte! Eerst maken we jouw eigen checkkaartje. Dat kan je altijd bij je hebben, ook in je hoofd.',
     uitleg:'Je hebt veel geleerd. Hier is alles samen in vijf vragen. <b>Wie</b> zegt het? <b>Wat voel ik</b>? <b>Waar</b> komt de foto of het filmpje vandaan? <b>Zegt iemand anders</b> hetzelfde? En: <b>moet ik dit echt delen?</b> Kies daarna de vragen die jij het belangrijkst vindt.',
+    anim:{"soort": "lijst", "titel": "Arnes checkkaartje in actie", "kopLabel": "Filmpje", "kop": "“Wetenschappers vonden een nieuwe diersoort: de vliegende kat! 😱”", "items": [{"t": "Wie zegt het?", "s": "Account van vorige week, bijna geen volgers", "p": "verdacht", "st": "nok"}, {"t": "Wat voel ik?", "s": "Superverbaasd. Even wachten dus.", "p": "even wachten", "st": "todo"}, {"t": "Waar komt het vandaan?", "s": "Het filmpje is gemaakt met AI", "p": "nep", "st": "nok"}, {"t": "Zegt iemand anders het ook?", "s": "Geen enkele dierensite", "p": "nee", "st": "nok"}, {"t": "Moet ik dit delen?", "s": "Nee", "p": "✓ niet gedeeld", "st": "ok"}], "tempo": 1300, "onder": "Vijf vragen, één minuut. Zo houd je het Gerucht klein."},
     voorbeeld:{kind:'tegels', titel:'Arnes checkkaartje', tegels:[
       {groot:'🕵️', t:'Wie zegt het?', s:'Klik op de naam'},
       {groot:'💓', t:'Wat voel ik?', s:'Sterk gevoel? Even wachten'},
@@ -2337,6 +2581,7 @@ L.push(
   tiener:{
     gids:'Laatste halte. Eerst bouw je je eigen checkroutine. Iets wat je in tien seconden kan doen, telkens weer.',
     uitleg:'Een goede routine is <b>kort</b>, zodat je ze echt gebruikt. Een voorbeeld: <b>1. Stop</b> bij een sterke emotie. <b>2. Wie</b> zegt dit, en wat wil die? <b>3. Zijwaarts</b>: wat zeggen anderen? <b>4. Context</b>: oud, geknipt, uit verband? <b>5. Delen</b> alleen wat klopt. Maak je eigen versie, met de vragen die voor jou het meest werken.',
+    anim:{"soort": "lijst", "titel": "Noors routine in actie", "kopLabel": "Post", "kop": "“Dit drankje verdubbelt je concentratie tijdens de examens, bewezen!”", "items": [{"t": "Stop", "s": "Klinkt te mooi", "p": "even wachten", "st": "todo"}, {"t": "Wie?", "s": "Een influencer met een kortingscode", "p": "reclame", "st": "nok"}, {"t": "Zijwaarts", "s": "Geen onafhankelijke studie te vinden", "p": "geen bewijs", "st": "nok"}, {"t": "Context", "s": "“Bewezen” door een onderzoek bij 12 mensen, betaald door het merk", "p": "zwak", "st": "nok"}, {"t": "Delen of niet", "s": "Niet als nieuws delen", "p": "✓ beslist", "st": "ok"}], "tempo": 1300, "onder": "Je routine in vijf stappen, toegepast op één post."},
     voorbeeld:{kind:'stappen', titel:'Noors routine in vijf stappen', stappen:[
       {t:'Stop', s:'Sterke emotie? Even wachten'},
       {t:'Wie?', s:'Account, site, belang'},
@@ -2359,6 +2604,7 @@ L.push(
   volw:{
     gids:'Op de redactie hangt een checklist naast elk scherm. Nu stel je je eigen versie op.',
     uitleg:'Een goede checklist is <b>kort</b>, zodat je ze echt gebruikt. Bijvoorbeeld: <b>1. Stop</b> bij een sterke emotie. <b>2. Wie</b> is de afzender, en wat wil die? <b>3. Zijwaarts</b>: wat zeggen andere, betrouwbare bronnen? <b>4. Context</b>: is het oud, geknipt of uit zijn verband? <b>5. Doorsturen</b> alleen wat klopt, met de bron erbij.',
+    anim:{"soort": "lijst", "titel": "Kurts checklist in actie", "kopLabel": "Doorgestuurd", "kop": "“Een arts uit het UZ zegt: dit keukenkruid geneest diabetes. Stuur door!”", "items": [{"t": "Stop", "s": "Gezondheid en een oproep om door te sturen", "p": "even wachten", "st": "todo"}, {"t": "Afzender", "s": "Geen naam, “een arts uit het UZ”", "p": "anoniem", "st": "nok"}, {"t": "Zijwaarts", "s": "Factcheckers schreven er al over", "p": "ontkracht", "st": "nok"}, {"t": "Context", "s": "Geen enkele studie, wel een webshop met dat kruid", "p": "reclame", "st": "nok"}, {"t": "Doorsturen?", "s": "Nee. Stop nooit met medicatie zonder je arts.", "p": "✓ beslist", "st": "ok"}], "tempo": 1300, "onder": "Vijf vragen. De meeste berichten hebben er maar twee nodig."},
     voorbeeld:{kind:'stappen', titel:'Kurts checklist', stappen:[
       {t:'Stop', s:'Sterke emotie? Even wachten'},
       {t:'Afzender', s:'Wie, en met welk belang?'},
@@ -2857,6 +3103,306 @@ function iconFor(ex){
 }
 const sentences = html => { const parts = html.split(/(?<=[.!?])\s+(?=[A-ZÀ-Ü<])/); return parts.length>3 ? [parts.slice(0,2).join(' '), ...parts.slice(2)] : parts; };
 
+/* ---------- animaties (korte uitlegfilmpjes in de pagina) ---------- */
+const ANIMS = {};
+function animFig(a){
+  const maker = ANIMS[a.soort]; if(!maker) return null;
+  const rustig = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const stage = h('div',{class:'astage', 'aria-live':'polite'});
+  const knop = h('button',{class:'btn ghost aknop'}, rustig ? '▶ Speel af' : '↻ Opnieuw afspelen');
+  let run = 0;
+  const play = instant => {
+    const id = ++run;
+    const T = (ms, fn) => { if(instant) return fn(); setTimeout(()=>{ if(id===run && stage.isConnected) fn(); }, ms); };
+    stage.replaceChildren(); maker(stage, a, T, instant);
+  };
+  knop.addEventListener('click', ()=>{ knop.textContent='↻ Opnieuw afspelen'; play(false); });
+  const fig = h('figure',{class:'anim'},
+    h('div',{class:'ahead'}, h('span',{class:'atag'}, '▶ Animatie'), h('b',null, a.titel)),
+    stage,
+    h('figcaption',null, h('span',{html:a.onder||''}), knop));
+  if(rustig){ play(true); }
+  else if('IntersectionObserver' in window){
+    play(true);
+    const io = new IntersectionObserver(es=>{ if(es.some(e=>e.isIntersecting)){ io.disconnect(); play(false); } }, {threshold:.45});
+    setTimeout(()=>io.observe(fig), 50);
+  } else play(false);
+  return fig;
+}
+const mark = s => s.replace(/\[\[(.+?)\]\]/g, '<mark>$1</mark>');
+
+/* 1. Een prompt wordt stap voor stap duidelijker */
+ANIMS.prompt = (st, a, T) => {
+  const pr = h('div',{class:'ap-bub me'}, h('span',{class:'ap-who'},'Jij'), h('span',{class:'ap-txt', html:a.start}));
+  const an = h('div',{class:'ap-bub ai vaag'}, h('span',{class:'ap-who'},'AI'), h('span',{class:'ap-txt', html:a.voor}));
+  const fill = h('i'), lab = h('span',{class:'ap-lab'}, 'De AI moet veel raden');
+  st.append(h('div',{class:'ap'}, pr, h('div',{class:'ap-meter'}, h('span',{class:'ap-mk'},'Hoe duidelijk is je vraag?'), h('div',{class:'ap-bar'}, fill), lab), an));
+  fill.style.width = '18%';
+  const n = a.stappen.length;
+  a.stappen.forEach((s,i)=>{
+    T(1600 + i*1700, ()=>{
+      pr.querySelector('.ap-txt').innerHTML = mark(s);
+      fill.style.width = Math.round(18 + (i+1)*(82/n)) + '%';
+      an.classList.add('denk'); an.style.opacity = String(Math.max(.35, 1 - (i+1)*.17));
+      lab.textContent = i < n-1 ? 'Nog iets minder raden…' : 'Alles wat de AI moet weten';
+    });
+  });
+  T(1600 + n*1700 + 400, ()=>{
+    an.classList.remove('vaag','denk'); an.classList.add('goed'); an.style.opacity = '1';
+    an.querySelector('.ap-txt').innerHTML = a.na; fill.classList.add('vol');
+    lab.textContent = 'Bruikbaar antwoord, in één keer';
+  });
+};
+
+/* 2. Een kraakprogramma probeert wachtwoorden */
+ANIMS.kraak = (st, a, T, instant) => {
+  const gok = h('span',{class:'ak-gok'}, '…'), tel = h('span',{class:'ak-tel'}, '0');
+  const rows = a.rijen.map(r=>{ const pill = h('span',{class:'ak-st'}, 'wacht'); const row = h('div',{class:'ak-rij'}, h('code',null, r.ww), pill); return {r,row,pill}; });
+  st.append(h('div',{class:'ak'},
+    h('div',{class:'ak-term'}, h('div',{class:'ak-top'}, h('i'),h('i'),h('i'), h('span',null,'Kraakprogramma')),
+      h('div',null, 'Probeert: ', gok), h('div',null, 'Pogingen: ', tel)),
+    h('div',{class:'ak-lijst'}, rows.map(x=>x.row))));
+  let t = 900, pogingen = 0;
+  const fmt = v => Math.round(v).toLocaleString('nl-BE');
+  const vreemd = () => Array.from({length:6+Math.floor(Math.random()*8)}, ()=>'abcdefghijklmnopqrstuvwxyz-0123456789'[Math.floor(Math.random()*37)]).join('');
+  rows.forEach(({r,row,pill})=>{
+    T(t, ()=>{ row.classList.add('bezig'); pill.textContent = 'bezig…'; });
+    if(!r.sterk){
+      r.gok.forEach((g,i)=>{ t += 380; const tt=t; T(tt, ()=>{ gok.textContent = g; pogingen += 1 + Math.random()*4e5; tel.textContent = fmt(pogingen); }); });
+      t += 500;
+      T(t, ()=>{ row.classList.remove('bezig'); row.classList.add('weg'); pill.textContent = 'Gekraakt · ' + r.tijd; gok.textContent = r.ww + '  ✓'; });
+      t += 900;
+    } else {
+      for(let i=0;i<12;i++){ t += 260; T(t, ()=>{ gok.textContent = vreemd(); pogingen *= 3.1; tel.textContent = fmt(pogingen); }); }
+      t += 400;
+      T(t, ()=>{ row.classList.remove('bezig'); row.classList.add('houdt'); pill.textContent = 'Niet gekraakt · ' + r.tijd; gok.textContent = 'geeft op…'; });
+    }
+  });
+  if(instant){ tel.textContent = 'miljarden'; }
+};
+
+/* 3. Een gerucht gaat van persoon naar persoon */
+ANIMS.gerucht = (st, a, T) => {
+  const W = 340, lagen = [1,2,4,8], ys = [26, 82, 138, 194];
+  const xs = n => Array.from({length:n}, (_,i)=> (W/n)*(i+.5));
+  let lijnen = '', knopen = '';
+  lagen.forEach((n,l)=>{ xs(n).forEach((x,i)=>{
+    if(l>0){ const px = xs(lagen[l-1])[Math.floor(i/2)]; lijnen += `<line class="gl l${l}" x1="${px}" y1="${ys[l-1]}" x2="${x}" y2="${ys[l]}" pathLength="1"/>`; }
+    knopen += `<circle class="gk l${l}${l===3&&i===5?' jij':''}" cx="${x}" cy="${ys[l]}" r="${l===0?13:11}"/>`;
+  }); });
+  const jx = xs(8)[5];
+  const svg = `<svg viewBox="0 0 ${W} 250" class="ag-net" role="img" aria-label="${a.titel}">${lijnen}${knopen}
+    <text class="ag-jij" x="${jx}" y="${ys[3]+30}" text-anchor="middle">jij</text>
+    <g class="ag-stop" transform="translate(${jx} ${ys[3]+50})"><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="9" y1="-9" x2="-9" y2="9"/></g></svg>`;
+  const tekst = h('div',{class:'ag-msg'}, h('span',{class:'ag-n'}, 'Versie 1'), h('span',{class:'ag-t', html:a.versies[0]}));
+  const wolk = h('div',{class:'ag-wolk', html: (typeof gerucht==='function') ? gerucht(70) : ''});
+  const net = h('div',{class:'ag-netwrap', html:svg});
+  st.append(h('div',{class:'ag'}, h('div',{class:'ag-boven'}, tekst, wolk), net));
+  const zet = l => { net.querySelectorAll('.l'+l).forEach(e=>e.classList.add('on')); };
+  T(300, ()=>zet(0));
+  a.versies.forEach((v,i)=>{ if(i===0) return;
+    T(300 + i*2200, ()=>{ zet(i); tekst.querySelector('.ag-n').textContent = 'Versie ' + (i+1); tekst.querySelector('.ag-t').innerHTML = v;
+      tekst.classList.remove('flits'); void tekst.offsetWidth; tekst.classList.add('flits'); wolk.style.transform = `scale(${1 + i*0.28})`; });
+  });
+  const tEind = 300 + a.versies.length*2200;
+  T(tEind, ()=>{ net.querySelector('.jij').classList.add('stop'); net.querySelector('.ag-stop').classList.add('on'); net.querySelector('.ag-jij').classList.add('on');
+    tekst.querySelector('.ag-n').textContent = 'Jij'; tekst.querySelector('.ag-t').innerHTML = a.breek; tekst.classList.add('breek'); });
+  T(tEind + 2600, ()=>{ tekst.classList.remove('breek'); tekst.classList.add('echt'); tekst.querySelector('.ag-n').textContent = 'Wat er echt gebeurde'; tekst.querySelector('.ag-t').innerHTML = a.echt; wolk.style.transform = 'scale(.7)'; });
+};
+
+/* ---------- animaties, reeks 2 ---------- */
+const eindBox = (st, a, T, ms) => { if(!a.eind) return; const e = h('div',{class:'a-eind', html:a.eind}); T(ms, ()=>{ st.append(e); }); };
+const PILL = {ok:'ok', nok:'nok', vraag:'vraag', todo:'todo'};
+
+/* Een taalmodel schrijft woord per woord */
+ANIMS.voorspel = (st, a, T) => {
+  const zin = h('div',{class:'av-zin', html:a.begin}), bars = h('div',{class:'av-bars'});
+  st.append(h('div',{class:'av'}, h('div',{class:'av-kop'}, a.vraag||'Welk woord komt er nu?'), zin, bars));
+  let t = 700;
+  a.woorden.forEach(w=>{
+    T(t, ()=>{ bars.replaceChildren(...w.opties.map(([wd,p])=>h('div',{class:'av-rij'+(wd===w.kies?' kies':'')}, h('span',{class:'av-w'}, wd), h('div',{class:'av-b'}, h('i',{style:'width:0%','data-p':p})), h('span',{class:'av-p'}, p+'%'))));
+      requestAnimationFrameSafe(()=>bars.querySelectorAll('i').forEach(i=>i.style.width=i.dataset.p+'%')); });
+    t += 1300;
+    T(t, ()=>{ bars.querySelector('.kies')?.classList.add('gekozen'); });
+    t += 700;
+    T(t, ()=>{ zin.append(' ', h('span',{class:'av-nieuw'}, w.kies)); });
+    t += 300;
+  });
+  eindBox(st, a, T, t + 500);
+};
+function requestAnimationFrameSafe(fn){ (window.requestAnimationFrame||setTimeout)(()=> (window.requestAnimationFrame||setTimeout)(fn)); }
+
+/* Een lijst die stap voor stap verschijnt en een stempel krijgt */
+ANIMS.lijst = (st, a, T) => {
+  const box = h('div',{class:'al'});
+  if(a.kop) box.append(h('div',{class:'al-kop'}, a.kopLabel ? h('span',{class:'al-kl'}, a.kopLabel) : null, h('span',{html:a.kop})));
+  st.append(box);
+  let t = a.kop ? 900 : 400;
+  a.items.forEach((it,i)=>{
+    const pill = it.p ? h('span',{class:'al-p '+(it.st||'ok')}, it.p) : null;
+    const row = h('div',{class:'al-r'}, h('span',{class:'al-n'}, a.genummerd===false ? '•' : String(i+1)), h('div',{class:'al-t'}, h('b',{html:it.t}), it.s ? h('small',{html:it.s}) : null), pill);
+    T(t, ()=>{ box.append(row); });
+    if(pill){ T(t+700, ()=>{ pill.classList.add('on'); row.classList.add('st-'+(it.st||'ok')); }); }
+    t += a.tempo || 1500;
+  });
+  eindBox(box, a, T, t + 300);
+};
+
+/* Een gesprek dat zich afspeelt */
+ANIMS.chat = (st, a, T) => {
+  const box = h('div',{class:'ac'}, a.kop ? h('div',{class:'ac-kop'}, a.kop) : null);
+  st.append(box);
+  let t = 500;
+  a.msgs.forEach(m=>{
+    const w = m.w || 'ai';
+    if(w!=='me' && w!=='sys'){ const dots = h('div',{class:'ac-m '+w+' typ'}, h('i'),h('i'),h('i')); T(t, ()=>box.append(dots)); t += 900; T(t, ()=>dots.remove()); }
+    const el = h('div',{class:'ac-m '+w+(m.st?' st-'+m.st:'')}, m.wie ? h('span',{class:'ac-wie'}, m.wie) : null, h('span',{html:m.t}), m.p ? h('span',{class:'ac-pill'}, m.p) : null);
+    T(t, ()=>box.append(el));
+    t += m.wacht || 1500;
+  });
+  eindBox(box, a, T, t);
+};
+
+/* Rode vlaggen in een bericht, een voor een */
+ANIMS.vlaggen = (st, a, T) => {
+  const rows = a.zinnen.map(z=>{ const lab = z.vlag ? h('span',{class:'avl-l'}, z.vlag) : null; return {z, el:h('div',{class:'avl-z'}, h('span',{html:z.t}), lab)}; });
+  st.append(h('div',{class:'avl'}, h('div',{class:'avl-kop'}, h('span',null, a.kanaal||'Bericht'), h('b',null, a.van||'')), ...rows.map(r=>r.el)));
+  let t = 900;
+  rows.forEach(r=>{ if(!r.z.vlag) return; T(t, ()=>r.el.classList.add('on')); t += 1500; });
+  eindBox(st, a, T, t);
+};
+
+/* Een lange tekst krimpt tot de kern */
+ANIMS.krimp = (st, a, T) => {
+  const tekst = h('div',{class:'ak2-tekst', html:a.tekst.replace(/\[\[(.+?)\]\]/g,'<span class="kern">$1</span>')});
+  const lijst = h('ul',{class:'ak2-lijst'});
+  st.append(h('div',{class:'ak2'}, h('div',{class:'ak2-lab'}, a.labVoor||'De lange tekst'), tekst, h('div',{class:'ak2-lab'}, a.labNa||'De samenvatting'), lijst));
+  T(1400, ()=>tekst.classList.add('dim'));
+  let t = 2600;
+  a.punten.forEach(p=>{ T(t, ()=>lijst.append(h('li',{html:p}))); t += 1100; });
+  eindBox(st, a, T, t + 200);
+};
+
+/* Twee sloten: wachtwoord en code */
+ANIMS.sloten = (st, a, T) => {
+  const mark = h('span',{class:'as-mark'}, '🦹');
+  const s1 = h('div',{class:'as-slot'}, h('span',{class:'as-ico'}, '🔒'), h('b',null,'Slot 1'), h('small',null, a.slot1));
+  const s2 = h('div',{class:'as-slot'}, h('span',{class:'as-ico'}, '🔒'), h('b',null,'Slot 2'), h('small',null, a.slot2));
+  const acc = h('div',{class:'as-acc'}, h('span',{class:'as-ico'}, '📬'), h('small',null, a.account));
+  const gsm = h('div',{class:'as-gsm'}, h('b',null, a.gsmKop||'Jouw gsm'), h('span',null, a.gsmVraag), h('div',{class:'as-gk'}, h('span',{class:'ja'}, 'Goedkeuren'), h('span',{class:'nee'}, 'Weigeren')));
+  st.append(h('div',{class:'as'}, h('div',{class:'as-wie'}, '🦹 ', a.dief), h('div',{class:'as-lane'}, mark), h('div',{class:'as-baan'}, s1, s2, acc), gsm));
+  mark.style.left = '0%';
+  T(700, ()=>mark.style.left = '16.6%');
+  T(1900, ()=>{ s1.classList.add('open'); s1.querySelector('.as-ico').textContent='🔓'; });
+  T(2900, ()=>mark.style.left = '50%');
+  T(4000, ()=>gsm.classList.add('on'));
+  T(5500, ()=>gsm.classList.add('nee'));
+  T(6200, ()=>{ s2.classList.add('dicht'); mark.classList.add('weg'); });
+  eindBox(st, a, T, 7200);
+};
+
+/* Een webadres van achter naar voor lezen */
+ANIMS.url = (st, a, T) => {
+  const box = h('div',{class:'au'}, a.kop ? h('div',{class:'au-kop', html:a.kop}) : null); st.append(box);
+  let t = 600;
+  a.urls.forEach(u=>{
+    const m = u.u.match(/^(https?:\/\/)([^\/]+)(.*)$/); const host = m[2], parts = host.split('.');
+    const eig = parts.slice(-2).join('.'), voor = parts.slice(0,-2).join('.');
+    const row = h('div',{class:'au-r'},
+      h('div',{class:'au-bar'}, h('span',{class:'au-s'}, m[1]), voor ? h('span',{class:'au-v'}, voor+'.') : null, h('span',{class:'au-e'}, eig), h('span',{class:'au-pad'}, m[3])),
+      h('div',{class:'au-uit'}, h('span',null, 'Eigenaar: '), h('b',null, eig), h('span',{class:'au-p '+(u.ok?'ok':'nok')}, u.ok ? (a.okTekst||'✓ echt') : (a.nokTekst||'✗ niet echt'))));
+    T(t, ()=>box.append(row)); t += 900;
+    T(t, ()=>row.classList.add('s1')); t += 900;
+    T(t, ()=>row.classList.add('s2')); t += 1100;
+    T(t, ()=>row.classList.add('s3')); t += 1300;
+  });
+  eindBox(box, a, T, t);
+};
+
+/* Losse stukjes info vormen samen een profiel */
+ANIMS.puzzel = (st, a, T) => {
+  const posts = a.stukjes.map(s=>h('div',{class:'ap2-post'}, h('span',{class:'ap2-i'}, s.i||'📌'), h('span',{html:s.post})));
+  const kaart = h('div',{class:'ap2-kaart'}, h('b',null, a.kaartKop||'Wat een oplichter nu weet'));
+  const bericht = h('div',{class:'ap2-msg', html:a.bericht});
+  st.append(h('div',{class:'ap2'}, h('div',{class:'ap2-posts'}, posts), kaart, bericht));
+  let t = 700;
+  a.stukjes.forEach((s,i)=>{ T(t, ()=>{ posts[i].classList.add('on'); }); T(t+500, ()=>kaart.append(h('div',{class:'ap2-f'}, h('span',null,'✓'), h('span',{html:s.weet})))); t += 1400; });
+  T(t+300, ()=>bericht.classList.add('on'));
+  eindBox(st, a, T, t + 2200);
+};
+
+/* 3-2-1 back-up tegen ransomware */
+ANIMS.backup = (st, a, T) => {
+  const doc = n => Array.from({length:n}, (_,i)=>h('span',{class:'ab-f'}, a.bestanden ? a.bestanden[i%a.bestanden.length] : '📄'));
+  const mk = (cls, kop, sub) => { const files = h('div',{class:'ab-fs'}); return {el:h('div',{class:'ab-box '+cls}, h('b',null,kop), h('small',null,sub), files), files}; };
+  const L = mk('l', a.laptop||'Laptop', a.subL||'origineel'), S = mk('s', a.schijf||'Externe schijf', a.subS||'losgekoppeld na de back-up'), C = mk('c', a.cloud||'Cloud', a.subC||'op een andere plek');
+  const msg = h('div',{class:'ab-msg'});
+  st.append(h('div',{class:'ab'}, h('div',{class:'ab-rij'}, L.el, S.el, C.el), msg));
+  L.files.append(...doc(4));
+  const zeg = (txt, cls) => { msg.className = 'ab-msg on ' + (cls||''); msg.innerHTML = txt; };
+  T(900, ()=>{ zeg(a.t1||'Kopie 1 en 2: back-up maken'); S.files.append(...doc(4)); C.files.append(...doc(4)); S.el.classList.add('vol'); C.el.classList.add('vol'); });
+  T(2600, ()=>{ if(!a.subS) S.el.classList.add('los'); zeg(a.t2||'De schijf gaat weer los van de laptop'); });
+  T(4200, ()=>{ L.el.classList.add('ransom'); L.files.querySelectorAll('.ab-f').forEach(f=>f.textContent=a.kapot||'🔒'); zeg(a.t3||'Ransomware versleutelt alles op de laptop', 'nok'); });
+  T(6200, ()=>{ L.el.classList.remove('ransom'); L.el.classList.add('terug'); L.files.replaceChildren(...doc(4)); zeg(a.t4||'Terugzetten van de back-up: niets kwijt', 'ok'); });
+  eindBox(st, a, T, 7600);
+};
+
+/* Omgekeerd zoeken: de oudste versie van een foto */
+ANIMS.zoek = (st, a, T) => {
+  const foto = h('div',{class:'az-foto'}, h('span',{class:'az-i'}, '🖼️'), h('span',{html:a.foto}), h('span',{class:'az-scan'}));
+  const lijst = h('div',{class:'az-l'});
+  st.append(h('div',{class:'az'}, foto, h('div',{class:'az-lab'}, a.lab||'Gevonden met deze foto, van nieuw naar oud'), lijst));
+  T(400, ()=>foto.classList.add('scan'));
+  let t = 2000;
+  a.hits.forEach(hh=>{ const r = h('div',{class:'az-r'+(hh.oudst?' oudst':'')}, h('span',{class:'az-d'}, hh.datum), h('div',null, h('small',null, hh.site), h('b',{html:hh.t}))); T(t, ()=>lijst.append(r)); t += 1000; });
+  T(t+200, ()=>{ foto.classList.remove('scan'); lijst.querySelector('.oudst')?.classList.add('on'); });
+  eindBox(st, a, T, t + 1400);
+};
+
+/* Een grafiek met afgeknipte as wordt eerlijk */
+ANIMS.as = (st, a, T) => {
+  const vals = a.punten.map(p=>p.v), max = Math.max(...vals), lo = a.vanaf;
+  const mooi = x => { const e = Math.pow(10, Math.floor(Math.log10(x))); for(const m of [1,2,2.5,5,10]) if(m*e >= x-1e-9) return m*e; };
+  const st1 = mooi((max-lo)*1.12/4), hi = lo + 4*st1, st2 = mooi(max*1.08/4), hiE = 4*st2;
+  const nl = (v, stp) => { const d = stp===undefined ? 2 : stp>=1 ? 0 : stp>=0.1 ? 1 : 2; return String(+(v.toFixed(d))).replace('.', ','); };
+  const bars = a.punten.map(p=>{ const b = h('i',null, h('span',{class:'aa-v'}, nl(p.v)+(a.eenheid||''))); return {p, b, el:h('div',{class:'aa-kol'}, h('div',{class:'aa-staaf'}, b), h('span',{class:'aa-x'}, p.l))}; });
+  const ticks = h('div',{class:'aa-y'});
+  const zetY = (l,hh) => ticks.replaceChildren(...[4,3,2,1,0].map(k=>h('span',null, nl(l+(hh-l)*k/4, (hh-l)/4)+(a.eenheid||''))));
+  const lab = h('div',{class:'aa-lab nok'}, a.labVoor||'De as begint niet bij 0');
+  st.append(h('div',{class:'aa'}, h('b',{class:'aa-t'}, a.titelGrafiek), h('div',{class:'aa-graf'}, ticks, h('div',{class:'aa-kols'}, bars.map(b=>b.el))), lab));
+  const zet = (l,hh) => { zetY(l,hh); bars.forEach(b=>b.b.style.height = Math.max(2,(b.p.v-l)/(hh-l)*100)+'%'); };
+  zet(lo, hi);
+  T(2600, ()=>{ lab.className = 'aa-lab'; lab.textContent = a.labTussen||'Kijk naar de onderkant…'; ticks.classList.add('flits'); });
+  T(4200, ()=>{ zet(0, hiE); lab.className = 'aa-lab ok'; lab.textContent = a.labNa||'Met de as vanaf 0: het verschil is klein'; ticks.classList.remove('flits'); });
+  eindBox(st, a, T, 5800);
+};
+
+/* Een feed die steeds meer van hetzelfde toont */
+ANIMS.feed = (st, a, T) => {
+  const ond = a.onderwerpen, feed = h('div',{class:'af-feed'}), lab = h('div',{class:'af-lab'});
+  const post = (k, liked) => h('div',{class:'af-post o'+k+(liked?' liked':'')}, h('span',{class:'af-dot'}), h('span',null, ond[k]), liked ? h('span',{class:'af-like'}, '♥') : null);
+  const rondes = a.rondes || [[0,1,2,3,0,2],[0,0,1,0,3,0],[0,0,0,2,0,0],[0,0,0,0,0,0]];
+  st.append(h('div',{class:'af'}, h('div',{class:'af-tel'}, h('div',{class:'af-top'}, a.app||'Voor jou'), feed), lab));
+  const toon = (r, i) => { feed.replaceChildren(...r.map((k,j)=>post(k, j===0 && i>0 && i<rondes.length))); };
+  toon(rondes[0], 0); lab.textContent = a.lab0 || 'Je feed is gevarieerd.';
+  rondes.slice(1).forEach((r,i)=>{ T(1800 + i*2000, ()=>{ toon(r, i+1); feed.classList.remove('schuif'); void feed.offsetWidth; feed.classList.add('schuif'); lab.innerHTML = (a.labs||[])[i] || ''; }); });
+  const tEind = 1800 + (rondes.length-1)*2000 + 600;
+  if(a.uit){ T(tEind, ()=>{ toon(a.uit, 0); feed.classList.remove('schuif'); void feed.offsetWidth; feed.classList.add('schuif'); lab.innerHTML = a.labUit; lab.classList.add('ok'); }); }
+  eindBox(st, a, T, tEind + 1400);
+};
+
+/* Een citaat wordt geknipt */
+ANIMS.knip = (st, a, T) => {
+  const zin = h('div',{class:'ak3-zin', html:'“' + a.zin.replace(/\[\[(.+?)\]\]/g,'<span class="hou">$1</span>').replace(/(^|<\/span>)([^<]+)(?=<span|$)/g, (m,p,txt)=>p+'<span class="weg">'+txt+'</span>') + '”'});
+  const lab = h('div',{class:'ak3-lab'}, a.labVol||'Wat er echt gezegd werd');
+  const post = h('div',{class:'ak3-post', html:a.post});
+  st.append(h('div',{class:'ak3'}, lab, zin, post));
+  T(1800, ()=>{ zin.classList.add('knip'); lab.textContent = '✂ ' + (a.labKnip||'Geknipt'); });
+  T(3200, ()=>{ zin.classList.add('kort'); post.classList.add('on'); lab.textContent = a.labGedeeld||'Zo ging het rond'; });
+  T(5600, ()=>{ zin.classList.remove('knip','kort'); post.classList.remove('on'); post.classList.add('weg'); lab.textContent = a.labTerug||'De volledige zin zegt het omgekeerde'; zin.classList.add('vol'); });
+  eindBox(st, a, T, 6800);
+};
+
 function renderStep(){
   const {les,c,step} = cur;
   const STEPS = stepsOf(c);
@@ -2867,6 +3413,7 @@ function renderStep(){
     body = h('div',{class:'step'},
       h('h2',null, les.titel),
       say(S.path, [c.gids, ...sentences(c.uitleg)], {size:84}),
+      c.anim ? animFig(c.anim) : null,
       h('div',{class:'actions'}, next));
   } else if(kind==='voorbeeld'){
     body = h('div',{class:'step'}, h('h2',null,'Zo ziet dat eruit'), renderExample(c.voorbeeld), h('div',{class:'actions'}, next));
